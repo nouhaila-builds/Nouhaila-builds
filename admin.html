@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEURAL//60 — analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { background: #fff; }
+    .admin { max-width: 960px; margin: 0 auto; padding: 6rem var(--pad) 4rem; }
+    .admin h1 { font-family: var(--serif); font-weight: 520; letter-spacing: -0.04em; font-size: 2.6rem; margin: 0.2rem 0 0; }
+    .admin form { display: flex; gap: 0.6rem; margin: 1.2rem 0 1.6rem; }
+    .admin input { flex: 1; border: 0; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 0.9rem; padding: 0.4rem 0; }
+    .admin button { border: 0; background: var(--pine); color: #f4f8fb; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.55rem 0.7rem; cursor: pointer; }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+    .stat { background: var(--cream); padding: 0.9rem 1rem; }
+    .stat span { display: block; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+    .stat strong { font-family: var(--serif); font-size: 1.8rem; font-weight: 520; letter-spacing: -0.03em; }
+    .charts { display: grid; gap: 1.4rem; margin-top: 1.6rem; }
+    .charts h2 { font-family: var(--serif); font-size: 1.3rem; font-weight: 520; margin: 0 0 0.4rem; }
+    .charts svg { width: 100%; height: auto; }
+    .err { color: #a34a1c; font-family: var(--mono); font-size: 0.8rem; }
+    @media (max-width: 720px) { .stats { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="admin">
+    <p class="kicker">NEURAL//60</p>
+    <h1>Game analytics</h1>
+    <form id="gate">
+      <input id="key" type="password" autocomplete="current-password" placeholder="Admin key" aria-label="Admin key">
+      <button type="submit">Open</button>
+    </form>
+    <p id="err" class="err" role="alert"></p>
+    <div id="view" hidden>
+      <div class="stats" id="stats"></div>
+      <div class="charts" id="charts"></div>
+    </div>
+  </main>
+  <script>
+    const keyInput = document.getElementById("key");
+    const err = document.getElementById("err");
+    const view = document.getElementById("view");
+    try {
+      const saved = sessionStorage.getItem("neural60-admin");
+      if (saved) keyInput.value = saved;
+    } catch (e) { /* private mode */ }
+
+    function bars(title, rows, color) {
+      const w = 640, h = 160, pad = 28;
+      const max = Math.max(1, ...rows.map((row) => row.value));
+      const gap = (w - pad * 2) / rows.length;
+      const parts = rows.map((row, i) => {
+        const bh = (row.value / max) * (h - 48);
+        const x = pad + i * gap + 6;
+        const y = h - 24 - bh;
+        return `<rect x="${x}" y="${y}" width="${Math.max(4, gap - 14)}" height="${bh}" fill="${color}"></rect>
+          <text x="${x}" y="${h - 8}" fill="#6a6258" font-size="11" font-family="IBM Plex Mono, monospace">${row.label}</text>`;
+      }).join("");
+      return `<section><h2>${title}</h2><svg viewBox="0 0 ${w} ${h}" role="img">${parts}</svg></section>`;
+    }
+
+    function line(title, rows) {
+      const w = 640, h = 160, pad = 28;
+      const max = Math.max(1, ...rows.map((row) => row.value));
+      const step = (w - pad * 2) / Math.max(1, rows.length - 1);
+      const pts = rows.map((row, i) => {
+        const x = pad + i * step;
+        const y = h - 24 - (row.value / max) * (h - 48);
+        return [x, y];
+      });
+      const d = pts.map((p, i) => (i ? "L" : "M") + p[0] + " " + p[1]).join(" ");
+      const labels = rows.filter((_, i) => i % 2 === 0).map((row, i) => {
+        const index = i * 2;
+        return `<text x="${pts[index][0]}" y="${h - 8}" fill="#6a6258" font-size="11" font-family="IBM Plex Mono, monospace">${row.label}</text>`;
+      }).join("");
+      return `<section><h2>${title}</h2><svg viewBox="0 0 ${w} ${h}" role="img"><path d="${d}" fill="none" stroke="#1b5274" stroke-width="1.6"></path>${labels}</svg></section>`;
+    }
+
+    async function load(key) {
+      const headers = { "X-Admin-Key": key };
+      const overview = await fetch("/api/admin/overview", { headers });
+      if (overview.status === 401) throw new Error("That key does not open the analytics.");
+      if (!overview.ok) throw new Error("The analytics could not be loaded.");
+      const series = await fetch("/api/admin/series", { headers });
+      if (!series.ok) throw new Error("The charts could not be loaded.");
+      const stats = await overview.json();
+      const data = await series.json();
+      const cards = [
+        ["Total players", stats.players],
+        ["Games played", stats.games],
+        ["Average score", stats.average_score],
+        ["Highest score", stats.highest_score],
+        ["Average accuracy", stats.accuracy + "%"],
+        ["Returning players", stats.returning]
+      ];
+      document.getElementById("stats").innerHTML = cards.map(([label, value]) =>
+        `<article class="stat"><span>${label}</span><strong>${value}</strong></article>`
+      ).join("");
+      document.getElementById("charts").innerHTML = [
+        bars("Games played", data.daily.map((row) => ({ label: row.day, value: row.games })), "#1b5274"),
+        bars("Score distribution", data.scores.map((row) => ({ label: row.label, value: row.count })), "#c2511a"),
+        line("Average score", data.daily.map((row) => ({ label: row.day, value: row.avg_score }))),
+        bars("Most played days", data.weekdays.map((row) => ({ label: row.label, value: row.count })), "#1b5274"),
+        line("Average accuracy", data.daily.map((row) => ({ label: row.day, value: row.accuracy })))
+      ].join("");
+      view.hidden = false;
+    }
+
+    document.getElementById("gate").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      err.textContent = "";
+      try {
+        await load(keyInput.value.trim());
+        sessionStorage.setItem("neural60-admin", keyInput.value.trim());
+      } catch (error) {
+        view.hidden = true;
+        err.textContent = error.message;
+      }
+    });
+    if (keyInput.value) document.getElementById("gate").requestSubmit();
+  </script>
+</body>
+</html>

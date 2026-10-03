@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nouhaila Berghane — Data science & data visualization</title>
+  <meta name="description" content="Portfolio of Nouhaila Berghane, interested in data science and data visualization: predictive modeling, time series, medical imaging, and interactive views of complex data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="neural60.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2312110e'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia' font-size='13' fill='%23f3efe6'%3ENB%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip" href="#work" data-i18n="skip">Skip to selected work</a>
+
+  <header class="nav" id="top">
+    <a class="nav-mark" href="#top">NB</a>
+    <nav class="nav-links" id="nav-links" data-i18n-attr="aria-label:nav.aria" aria-label="Sections">
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#education" data-i18n="nav.education">Education</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" data-i18n-attr="aria-label:lang.aria" aria-label="Language">
+      <button type="button" data-set-lang="fr" lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-set-lang="en" lang="en" aria-pressed="true" class="is-on">EN</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+      <span class="sr" data-i18n="nav.menu">Menu</span>
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <svg class="flag-sprite" aria-hidden="true">
+    <symbol id="flag-fr" viewBox="0 0 3 2">
+      <rect width="1" height="2" fill="#0055A4"/>
+      <rect x="1" width="1" height="2" fill="#fff"/>
+      <rect x="2" width="1" height="2" fill="#EF4135"/>
+    </symbol>
+    <symbol id="flag-ma" viewBox="0 0 900 600">
+      <rect width="900" height="600" fill="#C1272D"/>
+      <polygon fill="#006233" points="450,140 488.3,258.1 614.4,258.1 512.4,331.1 550.6,449.2 450,376.2 349.4,449.2 387.6,331.1 285.6,258.1 411.7,258.1"/>
+    </symbol>
+    <symbol id="icon-gh" viewBox="0 0 16 16">
+      <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+    </symbol>
+    <symbol id="icon-in" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/>
+    </symbol>
+  </svg>
+
+  <main>
+    <section class="hero">
+      <div class="hero-frame">
+        <img class="hero-photo" src="hero.jpeg" data-i18n-attr="alt:hero.alt" alt="Nouhaila Berghane by a mountain lake">
+      </div>
+      <div class="hero-copy">
+        <p class="hero-kicker" data-i18n="hero.kicker">Data science &amp; data visualization</p>
+        <h1>
+          <span>Nouhaila</span>
+          <span>Berghane</span>
+        </h1>
+        <p class="hero-lead">
+          <span data-i18n="hero.l1">Complex data.</span>
+          <span><span class="tone-science" data-i18n="hero.train">Model it</span>, <span class="tone-viz" data-i18n="hero.show">visualize it</span>,</span>
+          <span data-i18n="hero.l3">and understand it closely.</span>
+        </p>
+        <a class="hero-projects" href="#work">
+          <span data-i18n="hero.projects">View my projects</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <p class="hero-links">
+          <a href="https://github.com/nouhaila-builds" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a>
+          <a href="https://www.linkedin.com/in/nouhaila-berghane" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-in"/></svg>LinkedIn</a>
+        </p>
+        <div class="neural-cta">
+          <button type="button" class="neural-play" id="neural-open">
+            <span aria-hidden="true">▶</span>
+            <span data-i18n="game.play">Play NEURAL//60</span>
+          </button>
+          <p class="neural-tag" data-i18n="game.tag">60 seconds. Can you beat the network?</p>
+          <button type="button" class="neural-scores" id="neural-scores" aria-expanded="false" aria-controls="neural-hero-scores">
+            <span data-i18n="game.scores">Scores</span>
+          </button>
+          <aside class="neural-board" id="neural-hero-scores" aria-live="polite">
+            <p class="neural-board-kicker" data-i18n="game.board">NEURAL//60 — Top scores</p>
+            <ol id="neural-hero-board"></ol>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" data-i18n-attr="aria-label:skills.aria" aria-label="Technical skills">
+      <div class="section-head">
+        <p class="index">01</p>
+        <h2 data-i18n="skills.title">Skills</h2>
+      </div>
+      <ul class="skill-list">
+        <li class="skill-science">
+          <h3 data-i18n="skill.ds">Data science</h3>
+          <p data-i18n="skill.ds.body">Analysis, ETL, predictive modeling, time series, medical imaging, SQL Server, TensorFlow, scikit-learn.</p>
+        </li>
+        <li class="skill-viz">
+          <h3 data-i18n="skill.viz">Data visualization</h3>
+          <p data-i18n="skill.viz.body">Three.js, Dash, Tableau, Power BI, Mapbox, MapLibre, D3, interactive dashboards, 3D and geospatial views.</p>
+        </li>
+        <li>
+          <h3 data-i18n="skill.prog">Programming</h3>
+          <p data-i18n="skill.prog.body">Python, SQL, JavaScript, Java, C/C++. R at a working familiarity.</p>
+        </li>
+        <li>
+          <h3 data-i18n="skill.geo">Geospatial &amp; networks</h3>
+          <p data-i18n="skill.geo.body">GeoPandas, OpenStreetMap, GTFS, NetworkX, QGIS, MapShaper.</p>
+        </li>
+        <li>
+          <h3 data-i18n="skill.ms">Microsoft</h3>
+          <p data-i18n="skill.ms.body">Power Automate, Power Apps, Microsoft Lists, Excel, Word, PowerPoint.</p>
+        </li>
+        <li>
+          <h3 data-i18n="skill.int">Interests</h3>
+          <p data-i18n="skill.int.body">Data science and data visualization: predictive modeling, information visualization, interactive systems, and data-driven sensemaking.</p>
+        </li>
+        <li>
+          <h3 data-i18n="skill.lang">Languages</h3>
+          <p data-i18n="skill.lang.body">Arabic, French, English</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="work" id="work">
+      <div class="section-head">
+        <p class="index">02</p>
+        <h2 data-i18n="work.title">Selected work</h2>
+        <p class="work-intro" data-i18n="work.intro">Two threads: models that learn from data, and views that make that data readable.</p>
+        <div class="filters" role="tablist" data-i18n-attr="aria-label:filter.aria" aria-label="Filter projects">
+          <button type="button" class="is-on" data-filter="all" role="tab" aria-selected="true"><span data-i18n="filter.all">All</span></button>
+          <button type="button" data-filter="science" role="tab" aria-selected="false"><span class="swatch swatch--science"></span><span data-i18n="filter.science">Data science</span></button>
+          <button type="button" data-filter="viz" role="tab" aria-selected="false"><span class="swatch swatch--viz"></span><span data-i18n="filter.viz">Data visualization</span></button>
+        </div>
+      </div>
+
+      <div class="lanes" id="cases">
+        <div class="lane lane--science">
+          <header class="lane-head">
+            <p data-i18n="lane.train">Train it</p>
+            <h3 data-i18n="lane.science">Data science</h3>
+          </header>
+        <article class="case" id="medicaments" data-cat="science">
+          <div class="case-visual" aria-hidden="true">
+            <span class="case-num">01</span>
+            <svg viewBox="0 0 420 280" class="diagram">
+              <path d="M32 200 C 70 190, 90 120, 130 140 S 190 210, 230 150 S 300 70, 360 110" class="series"/>
+              <path d="M250 150 C 290 120, 320 90, 390 96" class="forecast"/>
+              <path d="M250 168 C 300 150, 330 130, 390 128" class="band"/>
+              <path d="M250 132 C 286 100, 318 70, 390 64" class="band"/>
+              <line x1="250" y1="40" x2="250" y2="230" class="split"/>
+              <text x="258" y="56" class="svg-label" data-i18n="svg.forecast">forecast</text>
+            </svg>
+          </div>
+          <div class="case-body">
+            <p class="kicker" data-i18n="med.kicker">Data science · 01</p>
+            <h3 data-i18n="med.title">Medicine consumption, as a time series</h3>
+            <p data-i18n="med.body">Forecasting dispensed volume from Open Medic with pandas, NumPy, and a Jupyter pipeline. Rows are projected onto a calendar and aggregated into a daily series. Features are calendar cycles, lags, and rolling statistics. statsmodels, scikit-learn, and XGBoost share one chronological split — 70 / 15 / 15 — so the future never leaks into training. TensorFlow stays optional, and only for the LSTM.</p>
+            <ul class="metrics">
+              <li><strong>Open Medic</strong><span data-i18n="med.m1">daily volume series</span></li>
+              <li><strong>70 / 15 / 15</strong><span data-i18n="med.m2">time-ordered split</span></li>
+              <li><strong data-i18n="med.hybrid">Hybrid</strong><span data-i18n="med.m3">ARIMA + XGBoost</span></li>
+            </ul>
+            <p class="note" data-i18n="med.note">The bench includes moving average, linear trend, single and double exponential smoothing, ARIMA, linear regression, random forest, XGBoost, a stacked hybrid, and an optional LSTM. Scores are MAE, RMSE, MAPE, and R².</p>
+            <p class="stack">Python · pandas · NumPy · Jupyter · statsmodels · scikit-learn · XGBoost</p>
+            <p class="case-link"><a href="https://github.com/nouhaila-builds/MediTimeSeries-Forecasting-Hospital-Medicine-Consumption." rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
+          </div>
+        </article>
+
+        <article class="case" id="alzheimer" data-cat="science">
+          <div class="case-visual" aria-hidden="true">
+            <span class="case-num">02</span>
+            <svg viewBox="0 0 420 280" class="diagram">
+              <rect x="36" y="28" width="150" height="110" rx="8" class="frame"/>
+              <rect x="52" y="44" width="118" height="78" rx="40" class="scan"/>
+              <circle cx="118" cy="82" r="18" class="scan-core"/>
+              <rect x="214" y="28" width="150" height="110" rx="8" class="frame"/>
+              <rect x="230" y="44" width="118" height="78" rx="40" class="scan dim"/>
+              <circle cx="278" cy="78" r="10" class="mark"/>
+              <rect x="36" y="154" width="150" height="98" rx="8" class="frame"/>
+              <rect x="214" y="154" width="150" height="98" rx="8" class="frame"/>
+              <path d="M70 210c24-28 50-28 74 0" class="wave"/>
+              <path d="M248 214c22-18 46-8 70 6" class="wave"/>
+            </svg>
+          </div>
+          <div class="case-body">
+            <p class="kicker" data-i18n="alz.kicker">Data science · 02</p>
+            <h3 data-i18n="alz.title">Alzheimer stage classification from MRI</h3>
+            <p data-i18n="alz.body">A four-class image model in TensorFlow and Keras that places a brain MRI into NonDemented, Very Mild, Mild, or Moderate dementia. scikit-learn builds the stratified 70 / 15 / 15 split. The public set holds about 44,000 already augmented scans. Class weights come from the training fold only, with early stopping on validation. The reference comparison trains SimpleCNN from scratch against an ImageNet ResNet50. VGG16, AdvancedCNN, and MultiScaleCNN are the other architectures on the same bench.</p>
+            <ul class="metrics">
+              <li><strong>~44k</strong><span data-i18n="alz.m1">MRI scans</span></li>
+              <li><strong>4</strong><span data-i18n="alz.m2">clinical stages</span></li>
+              <li><strong>224²</strong><span data-i18n="alz.m3">input resolution</span></li>
+            </ul>
+            <p class="note" data-i18n="alz.note">Demonstration only. The set has no patient id, so an image and its augmentation can land in both train and test. It is not a diagnostic tool.</p>
+            <p class="stack">Python · TensorFlow / Keras · scikit-learn · SimpleCNN · AdvancedCNN · MultiScaleCNN · ResNet50 · VGG16</p>
+            <p class="case-link"><a href="https://github.com/nouhaila-builds/Classification-des-stades-d-Alzheimer-partir-d-IRM" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
+          </div>
+        </article>
+
+        <article class="case" id="tuberculosis" data-cat="science">
+          <div class="case-visual" aria-hidden="true">
+            <span class="case-num">03</span>
+            <svg viewBox="0 0 420 280" class="diagram">
+              <g class="dots">
+                <circle cx="70" cy="70" r="5"/><circle cx="110" cy="96" r="7"/><circle cx="150" cy="60" r="4"/>
+                <circle cx="190" cy="110" r="9"/><circle cx="240" cy="78" r="6"/><circle cx="280" cy="130" r="5"/>
+                <circle cx="90" cy="150" r="4"/><circle cx="140" cy="170" r="8"/><circle cx="200" cy="190" r="5"/>
+                <circle cx="260" cy="180" r="11"/><circle cx="320" cy="90" r="4"/><circle cx="340" cy="160" r="6"/>
+              </g>
+              <path d="M48 230h324" class="axis"/>
+              <rect x="48" y="214" width="70" height="16" class="bar"/>
+              <rect x="132" y="188" width="70" height="42" class="bar accent"/>
+              <rect x="216" y="184" width="70" height="46" class="bar accent"/>
+              <rect x="300" y="180" width="70" height="50" class="bar accent"/>
+            </svg>
+          </div>
+          <div class="case-body">
+            <p class="kicker" data-i18n="tb.kicker">Data science · 03</p>
+            <h3 data-i18n="tb.title">Tuberculosis resistance from country and lineage</h3>
+            <p data-i18n-html="tb.body">Afro-TB holds 13,681 African isolates of <em>Mycobacterium tuberculosis</em> across 25 countries and 9 lineages. pandas prepares the table. scikit-learn fits logistic regression, KNN, and a random forest on country and lineage alone, with NumPy, SciPy, matplotlib, and seaborn around the figures. The 157 resistance mutations already define the published drug profile, so the models never see them. They beat a majority-class baseline. The signal sits mostly in country, then lineage 2.</p>
+            <ul class="metrics">
+              <li><strong>0.775</strong><span data-i18n="tb.m1">random forest AUC</span></li>
+              <li><strong>0.655</strong><span data-i18n="tb.m2">F1, resistant class</span></li>
+              <li><strong>0.575</strong><span data-i18n="tb.m3">majority baseline accuracy</span></li>
+            </ul>
+            <p class="note" data-i18n="tb.note">Logistic regression AUC 0.764, KNN 0.770. Country and lineage describe where an isolate comes from. They do not explain the resistance mechanism. South Africa and lineage 4 dominate the collection.</p>
+            <p class="stack">Python · pandas · NumPy · scikit-learn · SciPy · matplotlib · seaborn · logistic regression · KNN · random forest</p>
+            <p class="case-link"><a href="https://github.com/nouhaila-builds/Pr-diction-de-la-tuberculose" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
+          </div>
+        </article>
+
+        </div>
+        <div class="lane lane--viz">
+          <header class="lane-head">
+            <p data-i18n="lane.show">Show it</p>
+            <h3 data-i18n="lane.viz">Data visualization</h3>
+          </header>
+        <article class="case" id="railviz" data-cat="viz">
+          <div class="case-visual case-visual--shot" aria-hidden="true">
+            <img src="railviz-overview.jpg" alt="">
+            <span class="case-num">04</span>
+          </div>
+          <a class="case-video" href="https://youtu.be/l5-ilOwbPVo" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><span data-i18n="rail.video">Watch</span></a>
+          <div class="case-body">
+            <p class="case-logos">
+              <img src="inria-logo.png" alt="Inria" width="88" height="27">
+              <img src="sncf-logo.svg" alt="SNCF" width="52" height="27">
+            </p>
+            <p class="kicker" data-i18n="rail.kicker">Data visualization · 04 · INRIA × SNCF</p>
+            <h3 data-i18n="rail.title">RailViz — TGV network in space and time</h3>
+            <p data-i18n="rail.body">Research internship at INRIA Saclay, team ILDA, with SNCF. JavaScript, Mapbox GL, and Three.js draw an interactive 2D map and a 3D space-time cube of railway infrastructure and traffic. Python, GeoPandas, and NetworkX match heterogeneous GTFS timetables to OpenStreetMap geometries, so a train’s path is both a place and a schedule.</p>
+            <ul class="metrics">
+              <li><strong>2D + 3D</strong><span data-i18n="rail.m1">map and space-time cube</span></li>
+              <li><strong>GTFS × OSM</strong><span data-i18n="rail.m2">matched network</span></li>
+              <li><strong>ILDA</strong><span data-i18n="rail.m3">HCI &amp; visualization</span></li>
+            </ul>
+            <p class="note" data-i18n="rail.note">Interaction design is the research question: which visual representations help someone navigate a national rail network without losing the geography or the clock.</p>
+            <p class="stack">JavaScript · Mapbox GL · Three.js · Python · GeoPandas · NetworkX · GTFS · OpenStreetMap</p>
+            <p class="case-link"><a class="case-try" href="https://railviz-224ad8.gitlabpages.inria.fr/viz/" rel="noopener noreferrer"><span data-i18n="rail.view">Try it</span><span class="try-arrow" aria-hidden="true">→</span></a></p>
+          </div>
+        </article>
+
+        <article class="case" id="climate" data-cat="viz">
+          <div class="case-visual case-visual--shot" aria-hidden="true">
+            <img src="climate-overview.jpg" alt="">
+            <span class="case-num">05</span>
+          </div>
+          <a class="case-video" href="https://youtu.be/nY1giLnCHjM" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><span data-i18n="cli.video">Watch</span></a>
+          <div class="case-body">
+            <p class="kicker" data-i18n="cli.kicker">Data visualization · 05</p>
+            <h3>Climate Risk Explorer</h3>
+            <p data-i18n="cli.body">An atlas in React and TypeScript, built with Vite, for one question: how climate risk changes across regions, hazards, and four decades. MapLibre draws the globe, D3 draws the fingerprint and the trends, Framer Motion handles the motion, and Zustand keeps the map, the playhead, and the selected country on one state. FastAPI and NumPy serve the series. Spain, extreme heat, and 2005–2025 follow the reader from the globe into a fingerprint, a trend, a comparison, and a written investigation. Up to four territories sit on the same scale.</p>
+            <ul class="metrics">
+              <li><strong>1980–2025</strong><span data-i18n="cli.m1">complete years</span></li>
+              <li><strong>ERA5</strong><span data-i18n="cli.m2">observed temperature</span></li>
+              <li><strong>6</strong><span data-i18n="cli.m3">hazard scales</span></li>
+            </ul>
+            <p class="note" data-i18n="cli.note">Temperature is ERA5 via Our World in Data. Heat days, drought, precipitation, flood, wildfire, and storm are a documented simulation and labeled as such. Missing years stay missing.</p>
+            <p class="stack">React · TypeScript · Vite · MapLibre · D3 · Framer Motion · Zustand · FastAPI · NumPy</p>
+            <p class="case-link"><a href="https://github.com/nouhaila-builds/Climate-Risk-Explorer" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
+          </div>
+        </article>
+
+        <article class="case" id="supply" data-cat="viz">
+          <div class="case-visual case-visual--shot" aria-hidden="true">
+            <img src="supply-overview.jpg" alt="">
+            <span class="case-num">06</span>
+          </div>
+          <a class="case-video" href="https://youtu.be/Xu6fRZpPhWM" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><span data-i18n="sup.video">Watch</span></a>
+          <div class="case-body">
+            <p class="kicker" data-i18n="sup.kicker">Data visualization · 06</p>
+            <h3>Supply Chain Control Tower</h3>
+            <p data-i18n="sup.body">A single investigation in React, TypeScript, and Tailwind, instead of five dashboards: Overview, Detect, Investigate, Trace. MapLibre, D3, and Plotly share one Zustand selection with the KPIs, the alerts, and the order timeline. FastAPI, pandas, NumPy, NetworkX, and scikit-learn aggregate every number from the tables. The analyst sees the health of a European network, then follows an anomaly down to one shipment. No sentence is written by a language model.</p>
+            <ul class="metrics">
+              <li><strong>30k</strong><span data-i18n="sup.m1">orders</span></li>
+              <li><strong>120k</strong><span data-i18n="sup.m2">shipment legs</span></li>
+              <li><strong>79.6%</strong><span data-i18n="sup.m3">on-time, vs 98.9% before</span></li>
+            </ul>
+            <p class="note" data-i18n="sup.note">The network is synthetic, seed 42, with five injected disruptions the detectors have to find from timestamps, cost, and stock. Detection is statistical: z-scores, an interquartile fence, and a linear cost residual.</p>
+            <p class="stack">React · TypeScript · Tailwind · MapLibre · D3 · Plotly · Zustand · FastAPI · pandas · NumPy · NetworkX · scikit-learn</p>
+            <p class="case-link"><a href="https://github.com/nouhaila-builds/Supply-Chain-Control-Tower" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
+          </div>
+        </article>
+
+        </div>
+      </div>
+      <p class="empty" id="empty" data-i18n="empty" hidden>No projects in this filter.</p>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="section-head">
+        <p class="index">03</p>
+        <h2 data-i18n="exp.title">Experience</h2>
+      </div>
+      <ol class="timeline">
+        <li>
+          <p class="when"><span data-i18n="exp1.date">May 2026 — Aug 2026</span><br><svg class="flag" role="img" data-i18n-attr="aria-label:flag.fr" aria-label="France"><use href="#flag-fr"/></svg> <span data-i18n="city.paris">Paris</span></p>
+          <div>
+            <h3 data-i18n="exp1.role">Research assistant intern</h3>
+            <p class="where">INRIA Saclay (ILDA) — SNCF</p>
+            <ul>
+              <li data-i18n="exp1.b1">Designed an interactive 3D system for exploring railway infrastructure and traffic.</li>
+              <li data-i18n="exp1.b2">Studied visual representations that help people navigate large transport networks.</li>
+              <li data-i18n="exp1.b3">Built interaction in Three.js and JavaScript inside an HCI and information-visualization group.</li>
+              <li data-i18n="exp1.b4">Matched GTFS and OpenStreetMap into one graph with geospatial methods.</li>
+            </ul>
+            <p class="stack">Python · Three.js · JavaScript · GeoPandas · NetworkX · OSM · GTFS · Mapbox</p>
+          </div>
+        </li>
+        <li>
+          <p class="when"><span data-i18n="exp2.date">Aug 2025</span><br><svg class="flag" role="img" data-i18n-attr="aria-label:flag.ma" aria-label="Morocco"><use href="#flag-ma"/></svg> <span data-i18n="city.tangier">Tangier</span></p>
+          <div>
+            <h3 data-i18n="exp2.role">Supply chain analyst intern</h3>
+            <p class="where">TE Connectivity</p>
+            <ul>
+              <li data-i18n="exp2.b1">Automated warehouse picking with a barcode-scanning app to raise accuracy and cut manual work.</li>
+              <li data-i18n="exp2.b2">Pulled production orders and showed bills of materials from SAP S/4HANA Excel extracts.</li>
+              <li data-i18n="exp2.b3">Delivered a solution valued at about 300,000 MAD (~€27,000).</li>
+            </ul>
+            <p class="stack">Power Apps · Power Automate · Microsoft Lists</p>
+          </div>
+        </li>
+        <li>
+          <p class="when"><span data-i18n="exp3.date">Jun 2024 — Sep 2024</span><br><svg class="flag" role="img" data-i18n-attr="aria-label:flag.ma" aria-label="Morocco"><use href="#flag-ma"/></svg> <span data-i18n="city.temara">Temara</span></p>
+          <div>
+            <h3 data-i18n="exp3.role">Data engineering intern</h3>
+            <p class="where">SAAD BTP SARL</p>
+            <ul>
+              <li data-i18n="exp3.b1">Built pipelines for 5M+ records through bronze, silver, and gold layers.</li>
+              <li data-i18n="exp3.b2">Forecast demand with Prophet and improved accuracy by 15%.</li>
+              <li data-i18n="exp3.b3">Shipped Power BI dashboards for demand, inventory, and supplier performance.</li>
+            </ul>
+            <p class="stack">Power BI · SQL Server · SQL · Prophet</p>
+          </div>
+        </li>
+        <li>
+          <p class="when"><span data-i18n="exp4.date">Apr 2023 — May 2023</span><br><svg class="flag" role="img" data-i18n-attr="aria-label:flag.ma" aria-label="Morocco"><use href="#flag-ma"/></svg> <span data-i18n="city.kenitra">Kenitra</span></p>
+          <div>
+            <h3 data-i18n="exp4.role">Data analyst intern</h3>
+            <p class="where">Phoenix Creative Agency</p>
+            <ul>
+              <li data-i18n="exp4.b1">Designed an automatic data-quality audit used across 10+ media productions.</li>
+              <li data-i18n="exp4.b2">Ran EDA and root-cause analysis on 50k+ records.</li>
+              <li data-i18n="exp4.b3">Automated quality metrics in Python and built performance dashboards.</li>
+            </ul>
+            <p class="stack">Python · SQL Server · Power BI · Excel</p>
+          </div>
+        </li>
+        <li>
+          <p class="when"><span data-i18n="exp5.date">Jun 2022 — Sep 2022</span><br><svg class="flag" role="img" data-i18n-attr="aria-label:flag.ma" aria-label="Morocco"><use href="#flag-ma"/></svg> <span data-i18n="city.tangier">Tangier</span></p>
+          <div>
+            <h3 data-i18n="exp5.role">Python developer intern</h3>
+            <p class="where">IR Skills</p>
+            <ul>
+              <li data-i18n="exp5.b1">Built a Flask and Firebase application for employee and intern records.</li>
+              <li data-i18n="exp5.b2">Centralized data and automated metrics used in reporting.</li>
+              <li data-i18n="exp5.b3">Added Dash dashboards for performance trends.</li>
+            </ul>
+            <p class="stack">Flask · Firebase · Dash · Python · JavaScript</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="education" id="education">
+      <div class="section-head">
+        <p class="index">04</p>
+        <h2 data-i18n="edu.title">Education</h2>
+      </div>
+      <ol class="schools">
+        <li>
+          <p class="when">2023 — 2026</p>
+          <div>
+            <h3 data-i18n="edu1.title">Engineering diploma</h3>
+            <p data-i18n-html="edu1.body">Artificial intelligence, data science &amp; big data<br>National School of Artificial Intelligence and Data Science, Taroudant, Morocco</p>
+          </div>
+        </li>
+        <li>
+          <p class="when">2021 — 2023</p>
+          <div>
+            <h3 data-i18n="edu2.title">University diploma in computer science</h3>
+            <p data-i18n="edu2.body">École Supérieure de Technologie, Sidi Bennour, Morocco</p>
+          </div>
+        </li>
+        <li>
+          <p class="when">2020</p>
+          <div>
+            <h3 data-i18n="edu3.title">High school diploma</h3>
+            <p data-i18n="edu3.body">Bir Anzarane High School, Casablanca, Morocco</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-head">
+        <p class="index">05</p>
+        <h2 data-i18n="contact.title">Contact</h2>
+      </div>
+      <a class="mail" href="mailto:nouhailaberghane1@gmail.com">nouhailaberghane1@gmail.com</a>
+      <ul class="contact-list">
+        <li><a href="tel:+33768173103">+33 7 68 17 31 03</a></li>
+        <li><a href="tel:+212619947509">+212 6 19 94 75 09</a></li>
+        <li><a href="https://www.linkedin.com/in/nouhaila-berghane" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-in"/></svg>LinkedIn</a></li>
+        <li><a href="https://github.com/nouhaila-builds" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p>Nouhaila Berghane</p>
+    <a href="#top" data-i18n="footer.top">Back to top</a>
+  </footer>
+  <div id="neural" class="neural" hidden>
+    <section id="neural-gate" class="neural-screen">
+      <div class="neural-card">
+        <p class="neural-kicker">NEURAL//60</p>
+        <h2 id="neural-title" data-i18n="game.who">Choose a username</h2>
+        <p class="neural-line" data-i18n="game.line">60 seconds. One network. One score.</p>
+        <form id="neural-form">
+          <label class="sr" for="neural-name" data-i18n="game.name.label">Username</label>
+          <input id="neural-name" name="username" maxlength="16" autocomplete="nickname" spellcheck="false" data-i18n-attr="placeholder:game.name.ph,aria-label:game.name.label" placeholder="Enter your username" aria-label="Username">
+          <p id="neural-name-error" class="neural-error" role="alert"></p>
+          <button type="submit" data-i18n="game.start">Start →</button>
+        </form>
+        <p class="neural-fine" data-i18n="game.boardnote">Your score may appear on the global leaderboard.</p>
+        <p class="neural-fine" data-i18n="game.privacy">Your username and game score are stored to maintain the leaderboard.</p>
+        <button type="button" class="neural-text" data-neural-close data-i18n="game.close">Close</button>
+      </div>
+    </section>
+    <section id="neural-play" class="neural-screen" hidden>
+      <header class="neural-hud">
+        <p class="neural-kicker">NEURAL//60</p>
+        <p class="neural-stat"><span data-i18n="game.time">Time</span> <strong id="neural-time">00:60</strong></p>
+        <p class="neural-stat"><span data-i18n="game.score">Score</span> <strong id="neural-score">0000</strong></p>
+        <p id="neural-combo" class="neural-combo" hidden>Combo ×2</p>
+        <p id="neural-tier" class="neural-tier" hidden><span data-i18n="game.tier">Difficulty</span> <strong id="neural-tier-mult">×3</strong></p>
+        <button type="button" class="neural-text" data-neural-exit data-i18n="game.exit">Exit</button>
+      </header>
+      <div class="neural-stage" id="neural-stage">
+        <svg id="neural-svg" role="group" aria-labelledby="neural-task"></svg>
+        <p id="neural-level" class="neural-level" hidden>
+          <strong id="neural-level-mult">×3</strong>
+          <span id="neural-level-label" data-i18n="game.tier.up">Higher difficulty</span>
+        </p>
+        <button type="button" id="neural-fire" data-i18n="game.fire">Fire →</button>
+      </div>
+      <div class="neural-dock">
+        <div class="neural-dock-copy">
+          <p class="neural-key">
+            <span class="neural-key-item"><i class="swatch" aria-hidden="true"></i><span data-i18n="game.key.clear">Clear</span></span>
+            <span class="neural-key-item"><i class="swatch is-copper" aria-hidden="true"></i><span data-i18n="game.key.copper">Copper</span></span>
+          </p>
+          <p class="neural-rule" data-i18n="game.rule">A clear link turns a neuron on. A copper link turns it off. A dashed link is off.</p>
+          <p id="neural-task" class="neural-task" aria-live="polite"></p>
+        </div>
+      </div>
+      <div id="neural-tour" class="neural-tour" hidden>
+        <div id="neural-tour-spot" class="neural-tour-spot"></div>
+        <div id="neural-tour-card" class="neural-tour-card">
+          <p id="neural-tour-step" class="neural-tour-step"></p>
+          <p id="neural-tour-text" aria-live="polite"></p>
+          <div class="neural-tour-actions">
+            <button type="button" id="neural-tour-next" data-i18n="game.tour.next">Next</button>
+            <button type="button" class="neural-text" id="neural-tour-skip" data-i18n="game.tour.skip">Skip</button>
+          </div>
+        </div>
+      </div>
+      <p id="neural-live" class="sr" aria-live="polite"></p>
+    </section>
+    <section id="neural-end" class="neural-screen" hidden>
+      <div class="neural-card">
+        <p class="neural-kicker">NEURAL//60</p>
+        <h2 data-i18n="game.up">Time's up</h2>
+        <p class="neural-your" data-i18n="game.your">Your score</p>
+        <p id="neural-final" class="neural-final">0000</p>
+        <p id="neural-nice" class="neural-line"></p>
+        <p id="neural-rank-note" class="neural-rank"></p>
+        <p class="neural-board-kicker" data-i18n="game.global">Global leaderboard</p>
+        <ol id="neural-end-board" class="neural-rank-list"></ol>
+        <p id="neural-local" class="neural-fine" hidden></p>
+        <div class="neural-end-actions">
+          <button type="button" id="neural-again" data-i18n="game.again">Play again</button>
+          <button type="button" class="neural-text" data-neural-close data-i18n="game.backto">Back to portfolio</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+  <script src="neural60.js"></script>
+</body>
+</html>
