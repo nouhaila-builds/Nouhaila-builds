@@ -18,7 +18,9 @@
   <header class="nav" id="top">
     <a class="nav-mark" href="#top">NB</a>
     <nav class="nav-links" id="nav-links" data-i18n-attr="aria-label:nav.aria" aria-label="Sections">
+      <a href="#interests" data-i18n="skill.int">Research topics</a>
       <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#skills" data-i18n="skills.title">Skills</a>
       <a href="#experience" data-i18n="nav.experience">Experience</a>
       <a href="#education" data-i18n="nav.education">Education</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -92,40 +94,20 @@
       </div>
     </section>
 
-    <section class="skills" data-i18n-attr="aria-label:skills.aria" aria-label="Technical skills">
+    <section class="interests" id="interests">
       <div class="section-head">
         <p class="index">01</p>
-        <h2 data-i18n="skills.title">Skills</h2>
+        <h2 data-i18n="skill.int">Research topics</h2>
       </div>
-      <ul class="skill-list">
-        <li class="skill-science">
-          <h3 data-i18n="skill.ds">Data science</h3>
-          <p data-i18n="skill.ds.body">Analysis, ETL, predictive modeling, time series, medical imaging, SQL Server, TensorFlow, scikit-learn.</p>
-        </li>
-        <li class="skill-viz">
-          <h3 data-i18n="skill.viz">Data visualization</h3>
-          <p data-i18n="skill.viz.body">Three.js, Dash, Tableau, Power BI, Mapbox, MapLibre, D3, interactive dashboards, 3D and geospatial views.</p>
-        </li>
-        <li>
-          <h3 data-i18n="skill.prog">Programming</h3>
-          <p data-i18n="skill.prog.body">Python, SQL, JavaScript, Java, C/C++. R at a working familiarity.</p>
-        </li>
-        <li>
-          <h3 data-i18n="skill.geo">Geospatial &amp; networks</h3>
-          <p data-i18n="skill.geo.body">GeoPandas, OpenStreetMap, GTFS, NetworkX, QGIS, MapShaper.</p>
-        </li>
-        <li>
-          <h3 data-i18n="skill.ms">Microsoft</h3>
-          <p data-i18n="skill.ms.body">Power Automate, Power Apps, Microsoft Lists, Excel, Word, PowerPoint.</p>
-        </li>
-        <li>
-          <h3 data-i18n="skill.int">Interests</h3>
-          <p data-i18n="skill.int.body">Data science and data visualization: predictive modeling, information visualization, interactive systems, and data-driven sensemaking.</p>
-        </li>
-        <li>
-          <h3 data-i18n="skill.lang">Languages</h3>
-          <p data-i18n="skill.lang.body">Arabic, French, English</p>
-        </li>
+      <ul class="interest-list">
+        <li data-i18n="int.vision">Computer vision</li>
+        <li class="interest-viz" data-i18n="int.viz">Information visualization</li>
+        <li data-i18n="int.gen">Generative models</li>
+        <li class="interest-viz" data-i18n="int.space">Spatio-temporal data</li>
+        <li data-i18n="int.imaging">Medical imaging</li>
+        <li class="interest-viz" data-i18n="int.geo">Geospatial analysis</li>
+        <li data-i18n="int.series">Time series</li>
+        <li data-i18n="int.fusion">Sensor fusion</li>
       </ul>
     </section>
 
@@ -141,15 +123,105 @@
         </div>
       </div>
 
-      <div class="lanes" id="cases">
-        <div class="lane lane--science">
-          <header class="lane-head">
-            <p data-i18n="lane.train">Train it</p>
-            <h3 data-i18n="lane.science">Data science</h3>
-          </header>
-        <article class="case" id="medicaments" data-cat="science">
-          <div class="case-visual" aria-hidden="true">
-            <span class="case-num">01</span>
+      <div class="work-list" id="cases">
+        <article class="project is-open" id="pretty-little-pictures" data-cat="science">
+          <h3 class="project-head">
+            <button class="project-toggle" type="button" aria-expanded="true" aria-controls="pretty-little-pictures-panel">
+              <span class="project-num">01</span>
+              <span class="project-meta">
+                <span class="kicker" data-i18n="plp.kicker">Data science · 01</span>
+                <span class="project-title" data-i18n="plp.title">Pretty Little Pictures — visible light into infrared</span>
+              </span>
+              <span class="project-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="project-panel" id="pretty-little-pictures-panel">
+            <figure class="project-shot">
+              <img src="plp-overview.jpg" alt="">
+            </figure>
+            <p data-i18n="plp.body">An independent study of whether pixel fidelity, perceptual similarity, and pedestrian-detection utility fall together when a visible-to-infrared translator is trained on fewer aligned pairs. The data is LLVIP. A U-Net trained with L1 is the baseline. The main model is conditional diffusion: RGB is concatenated with the noisy thermal image, the network predicts the noise, and sampling takes 50 DDIM steps. The fractions are nested, 1% ⊂ 5% ⊂ 20% ⊂ 100%, after one frozen validation cut. The test set does not change. A pedestrian detector is trained on real infrared, then frozen.</p>
+            <ul class="metrics">
+              <li><strong>LLVIP</strong><span data-i18n="plp.m1">aligned visible–infrared pairs</span></li>
+              <li><strong>1% → 100%</strong><span data-i18n="plp.m2">nested training fractions</span></li>
+              <li><strong>50</strong><span data-i18n="plp.m3">DDIM sampling steps</span></li>
+            </ul>
+            <p class="note" data-i18n="plp.note">On this run, PSNR stayed low and flat, near 11 dB. SSIM, LPIPS, and pedestrian AP did not move together. Generated infrared is 128×128. One seed, 42.</p>
+            <p class="stack">Python · PyTorch · U-Net · conditional diffusion · DDIM · LLVIP</p>
+            <p class="case-link"><a class="case-page" href="https://nouhaila-builds.github.io/Pretty-Little-Pictures-/" rel="noopener noreferrer"><span data-i18n="plp.page">Project page</span><span class="try-arrow" aria-hidden="true">→</span></a><a href="https://github.com/nouhaila-builds/Pretty-Little-Pictures" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
+          </div>
+        </article>
+
+        <article class="project" id="railviz" data-cat="viz">
+          <h3 class="project-head">
+            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="railviz-panel">
+              <span class="project-num">02</span>
+              <span class="project-meta">
+                <span class="kicker" data-i18n="rail.kicker">Data visualization · 02 · INRIA × SNCF</span>
+                <span class="project-title" data-i18n="rail.title">RailViz — TGV network in space and time</span>
+              </span>
+              <span class="project-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="project-panel" id="railviz-panel" hidden>
+            <figure class="project-shot">
+              <img src="railviz-overview.jpg" alt="">
+            </figure>
+            <p class="case-logos">
+              <img src="inria-logo.png" alt="Inria" width="88" height="27">
+              <img src="sncf-logo.svg" alt="SNCF" width="52" height="27">
+            </p>
+            <p data-i18n="rail.body">Research internship at INRIA Saclay, team ILDA, with SNCF. JavaScript, Mapbox GL, and Three.js draw an interactive 2D map and a 3D space-time cube of railway infrastructure and traffic. Python, GeoPandas, and NetworkX match heterogeneous GTFS timetables to OpenStreetMap geometries, so a train’s path is both a place and a schedule.</p>
+            <ul class="metrics">
+              <li><strong>2D + 3D</strong><span data-i18n="rail.m1">map and space-time cube</span></li>
+              <li><strong>GTFS × OSM</strong><span data-i18n="rail.m2">matched network</span></li>
+              <li><strong>ILDA</strong><span data-i18n="rail.m3">HCI &amp; visualization</span></li>
+            </ul>
+            <p class="note" data-i18n="rail.note">Interaction design is the research question: which visual representations help someone navigate a national rail network without losing the geography or the clock.</p>
+            <p class="stack">JavaScript · Mapbox GL · Three.js · Python · GeoPandas · NetworkX · GTFS · OpenStreetMap</p>
+            <p class="case-link"><a class="case-video" href="https://youtu.be/l5-ilOwbPVo" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><span data-i18n="rail.video">Watch</span></a><a class="case-try" href="https://railviz-224ad8.gitlabpages.inria.fr/viz/" rel="noopener noreferrer"><span data-i18n="rail.view">Try it</span><span class="try-arrow" aria-hidden="true">→</span></a></p>
+          </div>
+        </article>
+
+        <article class="project" id="elivia" data-cat="science">
+          <h3 class="project-head">
+            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="elivia-panel">
+              <span class="project-num">03</span>
+              <span class="project-meta">
+                <span class="kicker" data-i18n="fac.kicker">Data science · 03</span>
+                <span class="project-title" data-i18n="fac.title">Elivia — facade detection from LiDAR and an image</span>
+              </span>
+              <span class="project-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="project-panel" id="elivia-panel" hidden>
+            <figure class="project-shot">
+              <img src="elivia-overview.jpg?v=2" alt="">
+            </figure>
+            <p data-i18n="fac.body">A vision pipeline that detects facades by joining a LiDAR point cloud with a photograph. YOLOv8 detects facades in the image. Open3D extracts vertical planes from the cloud. When a camera calibration exists, fusion projects those planes onto the image and keeps the detections that agree. KITTI-360 supplies the training images. nuScenes mini supplies a real camera–LiDAR calibration. Pseudo-labels are projected from the LiDAR onto the pictures.</p>
+            <ul class="metrics">
+              <li><strong>LiDAR + image</strong><span data-i18n="fac.m1">one facade, two sensors</span></li>
+              <li><strong>YOLOv8</strong><span data-i18n="fac.m2">2D detection</span></li>
+              <li><strong>KITTI-360 · nuScenes</strong><span data-i18n="fac.m3">training set and calibration</span></li>
+            </ul>
+            <p class="note" data-i18n="fac.note">The 2025 version detected planes and boxes. The 2026 version adds KITTI-360, nuScenes calibration, and LiDAR-projected pseudo-labels. Weights and the large datasets stay off GitHub.</p>
+            <p class="stack">Python · PyTorch · YOLOv8 · OpenCV · Open3D · nuScenes · KITTI-360</p>
+            <p class="case-link"><a href="https://github.com/nouhaila-builds/ELIVIA----LiDAR-and-image-facade-detection" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
+          </div>
+        </article>
+
+        <article class="project" id="medicaments" data-cat="science">
+          <h3 class="project-head">
+            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="medicaments-panel">
+              <span class="project-num">04</span>
+              <span class="project-meta">
+                <span class="kicker" data-i18n="med.kicker">Data science · 04</span>
+                <span class="project-title" data-i18n="med.title">Medicine consumption, as a time series</span>
+              </span>
+              <span class="project-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="project-panel" id="medicaments-panel" hidden>
+            <figure class="project-shot project-shot--diagram">
             <svg viewBox="0 0 420 280" class="diagram">
               <path d="M32 200 C 70 190, 90 120, 130 140 S 190 210, 230 150 S 300 70, 360 110" class="series"/>
               <path d="M250 150 C 290 120, 320 90, 390 96" class="forecast"/>
@@ -158,10 +230,7 @@
               <line x1="250" y1="40" x2="250" y2="230" class="split"/>
               <text x="258" y="56" class="svg-label" data-i18n="svg.forecast">forecast</text>
             </svg>
-          </div>
-          <div class="case-body">
-            <p class="kicker" data-i18n="med.kicker">Data science · 01</p>
-            <h3 data-i18n="med.title">Medicine consumption, as a time series</h3>
+            </figure>
             <p data-i18n="med.body">Forecasting dispensed volume from Open Medic with pandas, NumPy, and a Jupyter pipeline. Rows are projected onto a calendar and aggregated into a daily series. Features are calendar cycles, lags, and rolling statistics. statsmodels, scikit-learn, and XGBoost share one chronological split — 70 / 15 / 15 — so the future never leaks into training. TensorFlow stays optional, and only for the LSTM.</p>
             <ul class="metrics">
               <li><strong>Open Medic</strong><span data-i18n="med.m1">daily volume series</span></li>
@@ -174,25 +243,21 @@
           </div>
         </article>
 
-        <article class="case" id="alzheimer" data-cat="science">
-          <div class="case-visual" aria-hidden="true">
-            <span class="case-num">02</span>
-            <svg viewBox="0 0 420 280" class="diagram">
-              <rect x="36" y="28" width="150" height="110" rx="8" class="frame"/>
-              <rect x="52" y="44" width="118" height="78" rx="40" class="scan"/>
-              <circle cx="118" cy="82" r="18" class="scan-core"/>
-              <rect x="214" y="28" width="150" height="110" rx="8" class="frame"/>
-              <rect x="230" y="44" width="118" height="78" rx="40" class="scan dim"/>
-              <circle cx="278" cy="78" r="10" class="mark"/>
-              <rect x="36" y="154" width="150" height="98" rx="8" class="frame"/>
-              <rect x="214" y="154" width="150" height="98" rx="8" class="frame"/>
-              <path d="M70 210c24-28 50-28 74 0" class="wave"/>
-              <path d="M248 214c22-18 46-8 70 6" class="wave"/>
-            </svg>
-          </div>
-          <div class="case-body">
-            <p class="kicker" data-i18n="alz.kicker">Data science · 02</p>
-            <h3 data-i18n="alz.title">Alzheimer stage classification from MRI</h3>
+        <article class="project" id="alzheimer" data-cat="science">
+          <h3 class="project-head">
+            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="alzheimer-panel">
+              <span class="project-num">05</span>
+              <span class="project-meta">
+                <span class="kicker" data-i18n="alz.kicker">Data science · 05</span>
+                <span class="project-title" data-i18n="alz.title">Alzheimer stage classification from MRI</span>
+              </span>
+              <span class="project-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="project-panel" id="alzheimer-panel" hidden>
+            <figure class="project-shot">
+              <img src="alzheimer-overview.jpg" alt="">
+            </figure>
             <p data-i18n="alz.body">A four-class image model in TensorFlow and Keras that places a brain MRI into NonDemented, Very Mild, Mild, or Moderate dementia. scikit-learn builds the stratified 70 / 15 / 15 split. The public set holds about 44,000 already augmented scans. Class weights come from the training fold only, with early stopping on validation. The reference comparison trains SimpleCNN from scratch against an ImageNet ResNet50. VGG16, AdvancedCNN, and MultiScaleCNN are the other architectures on the same bench.</p>
             <ul class="metrics">
               <li><strong>~44k</strong><span data-i18n="alz.m1">MRI scans</span></li>
@@ -205,26 +270,21 @@
           </div>
         </article>
 
-        <article class="case" id="tuberculosis" data-cat="science">
-          <div class="case-visual" aria-hidden="true">
-            <span class="case-num">03</span>
-            <svg viewBox="0 0 420 280" class="diagram">
-              <g class="dots">
-                <circle cx="70" cy="70" r="5"/><circle cx="110" cy="96" r="7"/><circle cx="150" cy="60" r="4"/>
-                <circle cx="190" cy="110" r="9"/><circle cx="240" cy="78" r="6"/><circle cx="280" cy="130" r="5"/>
-                <circle cx="90" cy="150" r="4"/><circle cx="140" cy="170" r="8"/><circle cx="200" cy="190" r="5"/>
-                <circle cx="260" cy="180" r="11"/><circle cx="320" cy="90" r="4"/><circle cx="340" cy="160" r="6"/>
-              </g>
-              <path d="M48 230h324" class="axis"/>
-              <rect x="48" y="214" width="70" height="16" class="bar"/>
-              <rect x="132" y="188" width="70" height="42" class="bar accent"/>
-              <rect x="216" y="184" width="70" height="46" class="bar accent"/>
-              <rect x="300" y="180" width="70" height="50" class="bar accent"/>
-            </svg>
-          </div>
-          <div class="case-body">
-            <p class="kicker" data-i18n="tb.kicker">Data science · 03</p>
-            <h3 data-i18n="tb.title">Tuberculosis resistance from country and lineage</h3>
+        <article class="project" id="tuberculosis" data-cat="science">
+          <h3 class="project-head">
+            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="tuberculosis-panel">
+              <span class="project-num">06</span>
+              <span class="project-meta">
+                <span class="kicker" data-i18n="tb.kicker">Data science · 06</span>
+                <span class="project-title" data-i18n="tb.title">Tuberculosis resistance from country and lineage</span>
+              </span>
+              <span class="project-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="project-panel" id="tuberculosis-panel" hidden>
+            <figure class="project-shot project-shot--light">
+              <img src="tuberculosis-overview.jpg" alt="">
+            </figure>
             <p data-i18n-html="tb.body">Afro-TB holds 13,681 African isolates of <em>Mycobacterium tuberculosis</em> across 25 countries and 9 lineages. pandas prepares the table. scikit-learn fits logistic regression, KNN, and a random forest on country and lineage alone, with NumPy, SciPy, matplotlib, and seaborn around the figures. The 157 resistance mutations already define the published drug profile, so the models never see them. They beat a majority-class baseline. The signal sits mostly in country, then lineage 2.</p>
             <ul class="metrics">
               <li><strong>0.775</strong><span data-i18n="tb.m1">random forest AUC</span></li>
@@ -237,46 +297,21 @@
           </div>
         </article>
 
-        </div>
-        <div class="lane lane--viz">
-          <header class="lane-head">
-            <p data-i18n="lane.show">Show it</p>
-            <h3 data-i18n="lane.viz">Data visualization</h3>
-          </header>
-        <article class="case" id="railviz" data-cat="viz">
-          <div class="case-visual case-visual--shot" aria-hidden="true">
-            <img src="railviz-overview.jpg" alt="">
-            <span class="case-num">04</span>
-          </div>
-          <a class="case-video" href="https://youtu.be/l5-ilOwbPVo" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><span data-i18n="rail.video">Watch</span></a>
-          <div class="case-body">
-            <p class="case-logos">
-              <img src="inria-logo.png" alt="Inria" width="88" height="27">
-              <img src="sncf-logo.svg" alt="SNCF" width="52" height="27">
-            </p>
-            <p class="kicker" data-i18n="rail.kicker">Data visualization · 04 · INRIA × SNCF</p>
-            <h3 data-i18n="rail.title">RailViz — TGV network in space and time</h3>
-            <p data-i18n="rail.body">Research internship at INRIA Saclay, team ILDA, with SNCF. JavaScript, Mapbox GL, and Three.js draw an interactive 2D map and a 3D space-time cube of railway infrastructure and traffic. Python, GeoPandas, and NetworkX match heterogeneous GTFS timetables to OpenStreetMap geometries, so a train’s path is both a place and a schedule.</p>
-            <ul class="metrics">
-              <li><strong>2D + 3D</strong><span data-i18n="rail.m1">map and space-time cube</span></li>
-              <li><strong>GTFS × OSM</strong><span data-i18n="rail.m2">matched network</span></li>
-              <li><strong>ILDA</strong><span data-i18n="rail.m3">HCI &amp; visualization</span></li>
-            </ul>
-            <p class="note" data-i18n="rail.note">Interaction design is the research question: which visual representations help someone navigate a national rail network without losing the geography or the clock.</p>
-            <p class="stack">JavaScript · Mapbox GL · Three.js · Python · GeoPandas · NetworkX · GTFS · OpenStreetMap</p>
-            <p class="case-link"><a class="case-try" href="https://railviz-224ad8.gitlabpages.inria.fr/viz/" rel="noopener noreferrer"><span data-i18n="rail.view">Try it</span><span class="try-arrow" aria-hidden="true">→</span></a></p>
-          </div>
-        </article>
-
-        <article class="case" id="climate" data-cat="viz">
-          <div class="case-visual case-visual--shot" aria-hidden="true">
-            <img src="climate-overview.jpg" alt="">
-            <span class="case-num">05</span>
-          </div>
-          <a class="case-video" href="https://youtu.be/nY1giLnCHjM" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><span data-i18n="cli.video">Watch</span></a>
-          <div class="case-body">
-            <p class="kicker" data-i18n="cli.kicker">Data visualization · 05</p>
-            <h3>Climate Risk Explorer</h3>
+        <article class="project" id="climate" data-cat="viz">
+          <h3 class="project-head">
+            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="climate-panel">
+              <span class="project-num">07</span>
+              <span class="project-meta">
+                <span class="kicker" data-i18n="cli.kicker">Data visualization · 07</span>
+                <span class="project-title">Climate Risk Explorer</span>
+              </span>
+              <span class="project-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="project-panel" id="climate-panel" hidden>
+            <figure class="project-shot">
+              <img src="climate-overview.jpg" alt="">
+            </figure>
             <p data-i18n="cli.body">An atlas in React and TypeScript, built with Vite, for one question: how climate risk changes across regions, hazards, and four decades. MapLibre draws the globe, D3 draws the fingerprint and the trends, Framer Motion handles the motion, and Zustand keeps the map, the playhead, and the selected country on one state. FastAPI and NumPy serve the series. Spain, extreme heat, and 2005–2025 follow the reader from the globe into a fingerprint, a trend, a comparison, and a written investigation. Up to four territories sit on the same scale.</p>
             <ul class="metrics">
               <li><strong>1980–2025</strong><span data-i18n="cli.m1">complete years</span></li>
@@ -285,19 +320,25 @@
             </ul>
             <p class="note" data-i18n="cli.note">Temperature is ERA5 via Our World in Data. Heat days, drought, precipitation, flood, wildfire, and storm are a documented simulation and labeled as such. Missing years stay missing.</p>
             <p class="stack">React · TypeScript · Vite · MapLibre · D3 · Framer Motion · Zustand · FastAPI · NumPy</p>
-            <p class="case-link"><a href="https://github.com/nouhaila-builds/Climate-Risk-Explorer" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
+            <p class="case-link"><a class="case-video" href="https://youtu.be/nY1giLnCHjM" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><span data-i18n="cli.video">Watch</span></a><a href="https://github.com/nouhaila-builds/Climate-Risk-Explorer" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
           </div>
         </article>
 
-        <article class="case" id="supply" data-cat="viz">
-          <div class="case-visual case-visual--shot" aria-hidden="true">
-            <img src="supply-overview.jpg" alt="">
-            <span class="case-num">06</span>
-          </div>
-          <a class="case-video" href="https://youtu.be/Xu6fRZpPhWM" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><span data-i18n="sup.video">Watch</span></a>
-          <div class="case-body">
-            <p class="kicker" data-i18n="sup.kicker">Data visualization · 06</p>
-            <h3>Supply Chain Control Tower</h3>
+        <article class="project" id="supply" data-cat="viz">
+          <h3 class="project-head">
+            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="supply-panel">
+              <span class="project-num">08</span>
+              <span class="project-meta">
+                <span class="kicker" data-i18n="sup.kicker">Data visualization · 08</span>
+                <span class="project-title">Supply Chain Control Tower</span>
+              </span>
+              <span class="project-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="project-panel" id="supply-panel" hidden>
+            <figure class="project-shot">
+              <img src="supply-overview.jpg" alt="">
+            </figure>
             <p data-i18n="sup.body">A single investigation in React, TypeScript, and Tailwind, instead of five dashboards: Overview, Detect, Investigate, Trace. MapLibre, D3, and Plotly share one Zustand selection with the KPIs, the alerts, and the order timeline. FastAPI, pandas, NumPy, NetworkX, and scikit-learn aggregate every number from the tables. The analyst sees the health of a European network, then follows an anomaly down to one shipment. No sentence is written by a language model.</p>
             <ul class="metrics">
               <li><strong>30k</strong><span data-i18n="sup.m1">orders</span></li>
@@ -306,18 +347,49 @@
             </ul>
             <p class="note" data-i18n="sup.note">The network is synthetic, seed 42, with five injected disruptions the detectors have to find from timestamps, cost, and stock. Detection is statistical: z-scores, an interquartile fence, and a linear cost residual.</p>
             <p class="stack">React · TypeScript · Tailwind · MapLibre · D3 · Plotly · Zustand · FastAPI · pandas · NumPy · NetworkX · scikit-learn</p>
-            <p class="case-link"><a href="https://github.com/nouhaila-builds/Supply-Chain-Control-Tower" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
+            <p class="case-link"><a class="case-video" href="https://youtu.be/Xu6fRZpPhWM" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><span data-i18n="sup.video">Watch</span></a><a href="https://github.com/nouhaila-builds/Supply-Chain-Control-Tower" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-gh"/></svg>GitHub</a></p>
           </div>
         </article>
-
-        </div>
       </div>
       <p class="empty" id="empty" data-i18n="empty" hidden>No projects in this filter.</p>
     </section>
 
-    <section class="experience" id="experience">
+    <section class="skills" id="skills" data-i18n-attr="aria-label:skills.aria" aria-label="Technical skills">
       <div class="section-head">
         <p class="index">03</p>
+        <h2 data-i18n="skills.title">Skills</h2>
+      </div>
+      <ul class="skill-list">
+        <li class="skill-science">
+          <h3 data-i18n="skill.ds">Data science</h3>
+          <p data-i18n="skill.ds.body">Analysis, ETL, predictive modeling, time series, computer vision, facade detection, medical imaging, conditional diffusion, SQL Server, PyTorch, YOLOv8, OpenCV, TensorFlow, scikit-learn.</p>
+        </li>
+        <li class="skill-viz">
+          <h3 data-i18n="skill.viz">Data visualization</h3>
+          <p data-i18n="skill.viz.body">Three.js, Dash, Tableau, Power BI, Mapbox, MapLibre, D3, interactive dashboards, 3D and geospatial views.</p>
+        </li>
+        <li>
+          <h3 data-i18n="skill.prog">Programming</h3>
+          <p data-i18n="skill.prog.body">Python, SQL, JavaScript, Java, C/C++. R at a working familiarity.</p>
+        </li>
+        <li>
+          <h3 data-i18n="skill.geo">Geospatial &amp; networks</h3>
+          <p data-i18n="skill.geo.body">GeoPandas, OpenStreetMap, GTFS, NetworkX, QGIS, MapShaper, LiDAR, Open3D.</p>
+        </li>
+        <li>
+          <h3 data-i18n="skill.ms">Microsoft</h3>
+          <p data-i18n="skill.ms.body">Power Automate, Power Apps, Microsoft Lists, Excel, Word, PowerPoint.</p>
+        </li>
+        <li>
+          <h3 data-i18n="skill.lang">Languages</h3>
+          <p data-i18n="skill.lang.body">Arabic, French, English</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="section-head">
+        <p class="index">04</p>
         <h2 data-i18n="exp.title">Experience</h2>
       </div>
       <ol class="timeline">
@@ -392,7 +464,7 @@
 
     <section class="education" id="education">
       <div class="section-head">
-        <p class="index">04</p>
+        <p class="index">05</p>
         <h2 data-i18n="edu.title">Education</h2>
       </div>
       <ol class="schools">
@@ -422,7 +494,7 @@
 
     <section class="contact" id="contact">
       <div class="section-head">
-        <p class="index">05</p>
+        <p class="index">06</p>
         <h2 data-i18n="contact.title">Contact</h2>
       </div>
       <a class="mail" href="mailto:nouhailaberghane1@gmail.com">nouhailaberghane1@gmail.com</a>

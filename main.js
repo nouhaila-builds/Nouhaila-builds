@@ -24,9 +24,19 @@ links.querySelectorAll("a").forEach((link) => {
 });
 
 const buttons = [...document.querySelectorAll("[data-filter]")];
-const cases = [...document.querySelectorAll(".case")];
-const lanes = [...document.querySelectorAll(".lane")];
+const projects = [...document.querySelectorAll(".project")];
 const empty = document.querySelector("#empty");
+
+document.querySelectorAll(".project-toggle").forEach((button) => {
+  button.addEventListener("click", () => {
+    const project = button.closest(".project");
+    const panel = document.getElementById(button.getAttribute("aria-controls"));
+    const open = !project.classList.contains("is-open");
+    project.classList.toggle("is-open", open);
+    button.setAttribute("aria-expanded", String(open));
+    panel.hidden = !open;
+  });
+});
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -37,13 +47,10 @@ buttons.forEach((button) => {
       item.setAttribute("aria-selected", String(on));
     });
     let shown = 0;
-    cases.forEach((item) => {
+    projects.forEach((item) => {
       const hide = filter !== "all" && item.dataset.cat !== filter;
       item.hidden = hide;
       if (!hide) shown += 1;
-    });
-    lanes.forEach((lane) => {
-      lane.hidden = ![...lane.querySelectorAll(".case")].some((item) => !item.hidden);
     });
     empty.hidden = shown !== 0;
   });
